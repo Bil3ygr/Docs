@@ -50,4 +50,5 @@ pause
 
 ## 其它
 
-10.14及以上版本无法安装增强功能
+1. 10.14及以上版本无法安装增强功能
+2. `xcode-select install`安装失败，去[这里](https://developer.apple.com/downloads/index.action?name=for%20Xcode)下载自行安装
