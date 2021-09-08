@@ -52,3 +52,64 @@ pause
 
 1. 10.14及以上版本无法安装增强功能
 2. `xcode-select install`安装失败，去[这里](https://developer.apple.com/downloads/index.action?name=for%20Xcode)下载自行安装
+
+---
+
+# VirtualBox安装Mac OS Monterey
+
+## 开始前
+
+准备好所需文件
+
+- **VirtualBox**和**Extension Pack**，[下载地址](https://www.virtualbox.org/wiki/Downloads)
+- **macOS Monterey.iso**，[下载地址](https://nodeninjas.net/download-monterey-iso/)
+- VirtualBox Command File
+
+iso下载回来可能是多个文件，需要用如下命令合并成一个
+```bat
+copy /b filename1+filename2+filename3+... filename
+```
+
+## 开始
+
+1. 安装**VirtualBox**和**Extension Pack**
+2. 新建虚拟机
+   1. 选择高级模式
+   2. 输入名称，如 **`macOS Monterey`**，记作 **Name** ，方便后续使用
+   3. 类型选 **Mac OS X**，版本选 **Mac OS X (64-bit)**
+   4. 内存最少选择**8G**，上不封顶
+   5. 选择创建虚拟硬盘，点击创建
+   6. 文件保存位置用默认，文件大小拉到**150GB**
+   7. 文件类型选**VDI**，并动态分配，点击创建
+3. 配置刚创建好的虚拟机
+   1. 点击设置
+   2. 选择**系统**，取消**软驱**勾选，并保证**扩展特性**全部勾选
+   3. 切到**处理器**页签，**处理器数量**拉到绿色封顶
+   4. 选择**显示**，**显存大小**拉满
+   5. 选择**存储**，选中**没有盘片**，右侧点击**光盘图标**，选择准备好的**macOS Monterey.iso**
+   6. 选择**USB设备**，选中**USB3.0 (xHCI) 控制器**
+   7. 点击OK保存并关闭设置
+4. 关闭VirtualBox，运行VirtualBox命令，其中`VB_PATH`是VirtualBox安装路径，`VMDK_NAME`是新建虚拟机流程时的 **Name**
+```bat
+@echo off
+REM VirtualBox路径
+set VB_PATH="C:\Program Files\Oracle\VirtualBox"
+REM 虚拟机名称
+set VMDK_NAME="macOS Monterey"
+REM 分辨率
+set RESOLUTION=1600x900
+pushd %VB_PATH%
+VBoxManage.exe modifyvm %VMDK_NAME% --cpuidset 00000001 000106e5 00100800 0098e3fd bfebfbff
+VBoxManage setextradata %VMDK_NAME% "VBoxInternal/Devices/efi/0/Config/DmiSystemProduct" "MacBookPro15,1"
+VBoxManage setextradata %VMDK_NAME% "VBoxInternal/Devices/efi/0/Config/DmiBoardProduct" "Mac-551B86E5744E2388"
+VBoxManage setextradata %VMDK_NAME% "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+VBoxManage setextradata %VMDK_NAME% "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
+VBoxManage setextradata %VMDK_NAME% "VBoxInternal2/EfiGraphicsResolution" %RESOLUTION%
+popd
+```
+5. 启动虚拟机，开始安装
+   1. 选择语言
+   2. 选择**硬盘工具**，点击**继续**，选中**VBOX HARDDISK Media**，点击右上角**抹掉**
+   3. 名称随意，格式选择**Mac OS扩展 (日志式)**，点击**抹掉**
+   4. 完成后退出**硬盘工具**，选择**Install macOS 12 Beta**，点击**继续**
+   5. 一路继续，完成安装
