@@ -105,6 +105,8 @@ VBoxManage setextradata %VMDK_NAME% "VBoxInternal/Devices/efi/0/Config/DmiBoardP
 VBoxManage setextradata %VMDK_NAME% "VBoxInternal/Devices/smc/0/Config/DeviceKey" "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
 VBoxManage setextradata %VMDK_NAME% "VBoxInternal/Devices/smc/0/Config/GetKeyFromRealSMC" 1
 VBoxManage setextradata %VMDK_NAME% "VBoxInternal2/EfiGraphicsResolution" %RESOLUTION%
+REM 如果是AMD CPU，需要取消下面这行的注释
+REM VBoxManage modifyvm %VMDK_NAME% --cpu-profile "Intel Core i7-6700K"
 popd
 ```
 5. 启动虚拟机，开始安装
