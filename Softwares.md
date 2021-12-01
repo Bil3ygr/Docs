@@ -23,12 +23,16 @@
 
 ## Windows
 
+|Name|Download Url|
+|-|-|
 |TranslucentTB|[Github](https://github.com/TranslucentTB/TranslucentTB/releases)|
 |WindowsTerminal|[Github](https://github.com/microsoft/terminal/releases)|
 |PowerToys|[Github](https://github.com/microsoft/PowerToys/releases)|
 
 ## 其它
 
+|Name|Download Url|
+|-|-|
 |Oracle VM VirtualBox|[下载地址](https://www.virtualbox.org/wiki/Downloads)|
 |VNC Viewer|[下载地址](https://www.realvnc.com/en/connect/download/viewer/)|
 |Wechat|[下载地址](https://windows.weixin.qq.com/)|
