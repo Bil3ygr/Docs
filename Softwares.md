@@ -36,5 +36,5 @@
 |Oracle VM VirtualBox|[下载地址](https://www.virtualbox.org/wiki/Downloads)|
 |VNC Viewer|[下载地址](https://www.realvnc.com/en/connect/download/viewer/)|
 |Wechat|[下载地址](https://windows.weixin.qq.com/)|
-|Typora|[Windows](https://typora.io/#windows)，或[点此](https://typora.io/#)选择其它版本|
+|Typora|[Windows](https://typora.io/#windows)，或[点此](https://typora.io/#)选择其它版本（1.0版本开始收费，可下载试用版）|
 |OBS Studio|[下载地址](https://obsproject.com/download)|
