@@ -38,3 +38,17 @@
 |Wechat|[下载地址](https://windows.weixin.qq.com/)|
 |Typora|[Windows](https://typora.io/#windows)，或[点此](https://typora.io/#)选择其它版本（1.0版本开始收费，可下载试用版）|
 |OBS Studio|[下载地址](https://obsproject.com/download)|
+
+## 操作系统
+
+Windows11安装
+1. 虚拟机安装可能会出现硬件不支持
+  1. 在安装界面按`shift+F10`弹出命令行，输入`regedit`打开注册表
+  2. 打开路径`HKEY_LOCAL_MACHINE\SYSTEM\Setup`，右键`Setup`，选新建**项**，输入`LabConfig`
+  3. 选中`LabConfig`，在右边空白处新增两个`DWORD(32位)`，名字分别是`BypassTPMCheck`和`BypassSecureBootCheck`，值改成1，关闭注册表，不要重启，继续安装流程
+2. 激活
+  1. 管理员方式运行命令行
+  2. `slmgr -skms kms.03k.org`，更改kms服务器地址
+  3. `slmgr -upk`，卸载激活密钥
+  4. `slmgr -ipk W269N-WFGWX-YVC9B-4J6C9-T83GX`，注册激活密钥
+  5. `slmgr -ato`，激活
