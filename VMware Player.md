@@ -1,6 +1,6 @@
-# VMWare Player安装说明
+# VMware Player安装说明
 
-1. 到[这里](https://customerconnect.vmware.com/en/downloads/search?query=vmware%20player)下载最新的VMWare Player
+1. 到[这里](https://customerconnect.vmware.com/en/downloads/search?query=vmware%20player)下载最新的VMware Player
 2. 安装，记住安装路径
 3. 安装完成后运行命令`services.msc`打开服务，或者通过任务管理器打开服务页签，往下翻，找到**VMnetHDCP**和**VMware NAT Service**，确保两者已运行
 4. 服务未运行的情况，双击运行，如果还是无法运行，进行以下操作
