@@ -1,6 +1,6 @@
 ## VA插件高亮配置
 
-<span style="color:#E5C07B">(229,192,123)</span> Classes, structs, enums, interface, typedefs
+<span style="color:E5C07B">(229,192,123)</span> Classes, structs, enums, interface, typedefs
 
 #E06C75(224,108,117) Variables
 
